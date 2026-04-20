@@ -14,7 +14,7 @@ public class EmailAccount {
     private String usuario;
     private Email[] inbox;
     
-    public EmailAccount(String correo,String contraseña,String usuario){
+    public EmailAccount(String direccion,String contraseña,String usuario){
     this.direccion=direccion;
     this.contraseña=contraseña;
     this.usuario=usuario;
@@ -67,8 +67,8 @@ public class EmailAccount {
     }
     
     public void leerCorreo(int posicion) {
-        int indice = posicion - 1; // Ajuste para el arreglo
-        if (indice >= 0 && indice < 100 && inbox[indice] != null) {
+        int indice = posicion - 1; 
+        if (indice >= 0 && indice < inbox.length && inbox[indice] != null) {
             inbox[indice].imprimir();
             inbox[indice].marcarLeido();
         } else {
